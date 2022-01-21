@@ -1,0 +1,226 @@
+@import '../../../assets/fonts/fonts';
+
+// Variables
+$twitterColor: '#1D9BF0';
+$twitterColorHover: '#1A8CD8';
+
+@mixin button($colour) {
+    display: block;
+    width: 300px;
+    height: 40px;
+    border-radius: 22px;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    -ms-border-radius: 22px;
+    -o-border-radius: 22px;
+    border: 1px solid #ccc;
+    background-color: $colour;
+}
+
+#main-lobby {        
+    width: 100vw;
+    height: 100vh;        
+    background-color: #000;
+    .container-lobby {
+        display: flex;
+        height: 95vh;
+        .side-left {
+            width: 55%;
+            background-image: url('../../../assets/img/lobby/backgroundLobby.png');
+            background-size: auto;
+            height: 100%;
+            .logo {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                svg {
+                    display: block;
+                    width: 380px;
+                    height: 380px;                                        
+                    margin-left: auto;
+                    margin-right: auto;                                         
+                    g {
+                        fill: #fff;
+                        path {
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .side-right {
+            width: 45%;
+            height: 100%;
+            padding-left: 40px;
+            .logo {
+                height: 100px;
+                display: flex;
+                align-items: center;
+                margin-top: 50px;
+                svg {
+                    display: block;
+                    width: 45px;
+                    height: 45px;                                                                                                                       
+                    g {
+                        fill: #d9d9d9;
+                        path {
+                            fill: #d9d9d9;
+                        }
+                    }
+                }
+            }
+            h2 {
+                margin-top: 50px;
+                font-family: TwitterChirpExtendedHeavy;
+                font-size: 64px;
+                line-height: 84px;
+                color: #d9d9d9;
+            }
+            h4 {
+                margin-top: 40px;
+                font-family: TwitterChirpExtendedHeavy;
+                font-size: 31px;
+                line-height: 36px;
+                color: #d9d9d9;
+            }
+            button {
+                cursor: pointer;
+                transition: all 200ms;
+                -webkit-transition: all 200ms;
+                -moz-transition: all 200ms;
+                -ms-transition: all 200ms;
+                -o-transition: all 200ms;
+            }
+            button:not(.btn-tel) {
+                @include button(#fff);
+                img {
+                    width: 20px;  
+                    position: relative;                    
+                    top: 5px;
+                    margin-right: 10px;
+                }
+                img, p {
+                    display: inline;
+                }
+                p {
+                    line-height: 30px;
+                }
+            }
+            button:not(.btn-tel):hover {
+                background-color: rgb(223, 223, 223);
+            }
+            .btn-google {
+                margin-top: 40px;
+                margin-bottom: 10px;
+                font-family: 'Google Sans';
+                font-size: 14.5px;
+                color: #3c4043;
+                font-weight: 400;
+                cursor:not-allowed;
+            }
+            .btn-apple {
+                font-family: TwitterChirp;
+                font-weight: bold;
+                font-size: 15px;
+                cursor:not-allowed;
+            }
+            .separator {
+                width: 300px;
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+                margin-bottom: 15px;
+                hr {
+                    width: 45%;
+                    
+                }
+                p {
+                    margin-left: 3px;
+                    margin-right: 3px;
+                    font-family: 'TwitterChirp';
+                }
+            }
+            .btn-tel {
+                @include button(#{$twitterColor});
+                font-family: TwitterChirp;
+                font-size: 15px;
+                border: none;
+                font-weight: 600;
+            }
+            .btn-tel:hover {
+                background-color: #{$twitterColorHover};
+            }
+            .text-terms {
+                font-family: TwitterChirp;
+                font-size: 11px;
+                color: rgb(133, 133, 133);
+                width: 300px;
+                height: auto;
+                margin-top: 8px;
+                span {
+                    color: #{$twitterColor};
+                }
+                span:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                
+            }
+            h5 {
+                color : #ccc;
+                font-family: TwitterChirp;
+                font-size: 16.5px;
+                margin-top: 25px;
+            }
+
+            .btn-login {
+                background-color: #000 !important;
+                color: #{$twitterColor};
+                font-family: TwitterChirp;
+                font-weight: 500;
+                font-size: 16px;
+                border-width: 1px;
+                border-style: solid;
+                outline: none;
+                border-color: rgb(95, 94, 94) !important;
+                margin-top: 20px;
+            }
+            .btn-login:hover {
+                background-color: rgb(6, 6, 29) !important;
+            }
+            
+        }
+
+       
+    }
+    .footer {
+        height: 5vh;
+        width: 98vw;
+        margin: 0px auto;   
+        
+        .buttons {
+            width: 100%;
+            height: 100%;
+            display: flex;  
+            align-items: center;   
+            justify-content: space-around;                         
+            a, p {                    
+                width: max-content;
+                margin-left: 2px;
+                margin-right: 2px;
+                color: rgb(133, 133, 133);
+                font-size: 12.5px;
+                font-family: TwitterChirp;
+                text-decoration: none;
+            }    
+            a:hover {
+                text-decoration: underline;
+            }        
+        }
+    }
+   
+}
+
+.text-black {
+    color: #fff;
+}
