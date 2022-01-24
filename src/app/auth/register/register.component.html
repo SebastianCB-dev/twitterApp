@@ -16,39 +16,51 @@
               </path>
             </g>
           </svg>
-        </div>        
+        </div>
       </div>
 
       <div class="box-form">
         <h5>Crea tu cuenta</h5>
+
         <!-- Form -->
-        <form (ngSubmit)="registrar()"
-              autocomplete="off"
-              >
-            <!-- Nombre -->
-            <input type="text"
-                   class="txt-nombre"
-                   required>
-            <label class="lbl-nombre">Nombre</label>
-            <span class="msg-error">¿Como te llamas?</span>
-            <!-- Username -->
-            <input type="text"
-            class="txt-username"
-            required>
-           <label class="lbl-username">Username</label>
-           <span class="msg-error">¿Cual es tu username?</span>
-           <h3>Fecha de nacimiento</h3>
-           <p>Esta información no será pública. Confirma tu propia edad, incluso si esta cuenta es para una empresa, una mascota u otra cosa.</p>
-           <!-- Fecha de nacimiento -->
-           <input type="date"
-                  class="txt-birthday"
-                  [max]="getMinDate()">
-           <button type="button"
-                    class="btn-register"
-                    (click)="registrar()">Registrar</button>
-          </form>            
+        <form (ngSubmit)="registrar()" 
+              autocomplete="off" 
+              [formGroup]="miFormulario">
+          <!-- Nombre -->
+          <input type="text" 
+                 class="txt-nombre" 
+                 formControlName="nombre" required>
+          <label class="lbl-nombre">Nombre</label>
+          <span *ngIf="campoEsValido('nombre')"
+                class="msg-error" >¿Como te llamas?</span>
+
+          <!-- Username -->
+          <input type="text" 
+                 class="txt-username" 
+                 formControlName="username" required>
+          <label class="lbl-username">Username</label>
+          <span *ngIf="campoEsValido('username')" 
+                class="msg-error">¿Cual es tu username?</span>
+
+          <h3>Fecha de nacimiento</h3>
+          <p>Esta información no será pública. Confirma tu propia edad, incluso si esta cuenta es para una empresa, una
+            mascota u otra cosa.</p>
+
+          <!-- Fecha de nacimiento -->
+          <input type="date" 
+                 class="txt-birthday" 
+                 [max]="getMinDate()" 
+                 formControlName="birthday">
+          <span *ngIf="campoEsValido('birthday')" 
+                class="msg-error">¿Cual es tu cumpleaños?</span>
+                
+          <!-- Submit -->
+          <button type="submit" 
+                  class="btn-register" 
+                  (click)="registrar()">Registrar</button>
+        </form>
       </div>
-      
+
     </div>
   </div>
 
