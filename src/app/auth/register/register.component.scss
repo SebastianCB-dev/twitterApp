@@ -1,0 +1,221 @@
+@import '../../../assets/fonts/fonts';
+
+// Variables
+$twitterColor: '#1D9BF0';
+$twitterColorHover: '#1A8CD8';
+$backgroundColor: #242D34;
+
+.main-register {     
+    width: 100vw;
+    height: 100vh;
+    background-color: $backgroundColor;
+    .flex-center {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .box-register {
+            width: 600px;
+            margin: 0px auto;
+            height: 650px;
+            background-color: #000;
+            border-radius: 22px;  
+            .register-top {
+                display: flex;
+                height: 50px; 
+                padding-right: 50px;               
+                .logo {
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    svg {
+                        display: block;
+                        width: 32px;
+                        height: 32px;                                                                                                                       
+                        g {
+                            fill: #d9d9d9;
+                            path {
+                                fill: #d9d9d9;
+                            }
+                        }
+                    }
+                }
+                button {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 100%;
+                    margin: 10px;
+                    -webkit-border-radius: 100%;
+                    -moz-border-radius: 100%;
+                    -ms-border-radius: 100%;
+                    -o-border-radius: 100%;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all 200ms;                                        
+                    -webkit-transition: all 200ms;
+                    -moz-transition: all 200ms;
+                    -ms-transition: all 200ms;
+                    -o-transition: all 200ms;
+
+                    i{
+                        color: #fff;
+                        font-size: 18px;
+                    }
+                }
+                button:hover {
+                    background-color: rgba(78, 78, 78, 0.472);
+                }
+            }   
+            .box-form {
+                width: 88%;
+                margin: 0 auto;
+                margin-top: 20px;
+                h5 {
+                    color: rgb(226, 226, 226);
+                    font-family: TwitterChirp;
+                    font-size: 23px;
+                }  
+               form {
+                   margin-top: 30px;
+                   .txt-nombre, .txt-username {
+                       position: relative;
+                       z-index: 3;
+                       box-sizing: border-box;
+                       display: block;
+                       width: 100%;
+                       height: 60px;
+                       border-radius: 5px;
+                       -webkit-border-radius: 5px;
+                       -moz-border-radius: 5px;
+                       -ms-border-radius: 5px;
+                       -o-border-radius: 5px;
+                       background-color: transparent;
+                       outline: 0;
+                       border-width: 1px;
+                       border-style: solid;
+                       border-color: rgba(131, 131, 131, 0.596);
+                       color: #fff;
+                       font-family: TwitterChirp;
+                       font-size: 17px;
+                       padding-left: 15px;
+                       line-height: 20px;
+                       padding-top: 22px;                       
+                    }
+                    .txt-birthday {
+                        position: relative;
+                        z-index: 3;
+                        box-sizing: border-box;
+                        display: block;
+                        width: 100%;
+                        height: 60px;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        background-color: transparent;
+                        outline: 0;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: rgba(131, 131, 131, 0.596);
+                        color: #fff;
+                        font-family: TwitterChirp;
+                        text-align: center;
+                        font-size: 17px;
+                        margin-top: 20px;
+                        cursor: pointer;
+                    }
+                    .txt-username {
+                        margin-top: 20px;
+                    }
+                    .txt-nombre:focus, .txt-username:focus {
+                       border-width: 2px;
+                       border-style: solid;
+                       border-color: #{$twitterColor};
+                    }
+                    
+                    .txt-nombre:valid + .lbl-nombre,
+                    .txt-username:valid + .lbl-username  {
+                        margin-top: -51px;
+                        font-size: 14px;                        
+                        color: rgba(131, 131, 131, 0.596);
+                    }
+                    .txt-nombre:focus + .lbl-nombre,
+                    .txt-username:focus + .lbl-username {
+                        margin-top: -51px;
+                        font-size: 14px;                        
+                        color: #{$twitterColor};
+                    }
+                    .lbl-nombre, .lbl-username {
+                        position: absolute;
+                        color: rgba(131, 131, 131, 0.596);
+                        font-family: TwitterChirp;
+                        font-size: 18px;
+                        margin-top: -42px;
+                        margin-left: 15px;
+                        z-index: 2;
+                        transition: all 0.2s ease;
+                        -webkit-transition: all 0.2s ease;
+                        -moz-transition: all 0.2s ease;
+                        -ms-transition: all 0.2s ease;
+                        -o-transition: all 0.2s ease;
+                    }
+                    h3 {
+                        margin-top: 50px;
+                        color: #fff;
+                        font-size: 16px;
+                    }
+                    p {
+                        color: rgb(155, 155, 155);
+                        margin-top: 5px;
+                    }
+                    h3,p {
+                        font-family: TwitterChirp;
+                    } 
+                    .btn-register {
+                        display: block;
+                        width: 100%;
+                        margin-top: 50px;
+                        height: 50px;
+                        background-color: #EEF2F3;
+                        color: #000;
+                        font-family: TwitterChirpMedium;
+                        font-weight: 400;
+                        font-size: 16px;
+                        border-radius: 50px;
+                        -webkit-border-radius: 50px;
+                        -moz-border-radius: 50px;
+                        -ms-border-radius: 50px;
+                        -o-border-radius: 50px;
+                        outline: none;
+                        border: none;
+                        transition: all 200ms;
+                        -webkit-transition: all 200ms;
+                        -moz-transition: all 200ms;
+                        -ms-transition: all 200ms;
+                        -o-transition: all 200ms;
+                        cursor: pointer;
+                    }
+                    .btn-register:hover {
+                        background-color:#ccc;
+                    }
+               }                                                                      
+            }
+                               
+        }
+        
+    }
+}
+
+// Alerts
+.msg-error {
+    display:block;
+    color: red;
+    font-family: TwitterChirp;
+    font-size: 13px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
