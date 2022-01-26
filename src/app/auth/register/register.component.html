@@ -29,18 +29,22 @@
           <!-- Nombre -->
           <input type="text" 
                  class="txt-nombre" 
-                 formControlName="nombre" required>
+                 formControlName="name" required>
           <label class="lbl-nombre">Nombre</label>
-          <span *ngIf="campoEsValido('nombre')"
+          <span *ngIf="campoEsValido('name')"
                 class="msg-error" >¿Como te llamas?</span>
 
           <!-- Username -->
           <input type="text" 
                  class="txt-username" 
-                 formControlName="username" required>
+                 formControlName="username" 
+                 (keyup)="usernameDeleteError()"
+                 required>
           <label class="lbl-username">Username</label>
           <span *ngIf="campoEsValido('username')" 
                 class="msg-error">¿Cual es tu username?</span>
+          <span *ngIf="usernameErrorCreate" 
+                class="msg-error">Ya hay un usuario con ese username</span>
 
           <h3>Fecha de nacimiento</h3>
           <p>Esta información no será pública. Confirma tu propia edad, incluso si esta cuenta es para una empresa, una
@@ -57,7 +61,7 @@
           <!-- Submit -->
           <button type="submit" 
                   class="btn-register" 
-                  (click)="registrar()">Registrar</button>
+                  >Registrar</button>
         </form>
       </div>
 
