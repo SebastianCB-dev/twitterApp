@@ -30,7 +30,6 @@ export class FirebaseService {
   };
 
   private db;
-  userLogin: string = '';
 
   constructor() {
     initializeApp(this.firebaseConfig);
@@ -48,7 +47,7 @@ export class FirebaseService {
   }
 
 
-  async getUserByUsername(username: string): Promise<boolean> {
+  async isUserRegister(username: string): Promise<boolean> {
 
     const docRef = doc(this.db, "users", username);
     const docSnap = await getDoc(docRef);
@@ -57,6 +56,18 @@ export class FirebaseService {
       userCreated = true;
     }
     return userCreated;
+  }
+
+  async getUserByUsername(username: string) {
+    const docRef = doc(this.db, "users", username);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        return docSnap.data();
+    } else {
+    // doc.data() will be undefined in this case
+      return null;
+    }
   }
 
 }

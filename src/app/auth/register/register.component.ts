@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
 
     // Validar username no registrado
 
-    const isUserCreated = await this.firebaseService.getUserByUsername(this.miFormulario.controls["username"].value);
+    const isUserCreated = await this.firebaseService.isUserRegister(this.miFormulario.controls["username"].value);
     if(isUserCreated) {
       this.usernameErrorCreate = true;
       return;
@@ -65,7 +65,6 @@ export class RegisterComponent implements OnInit {
     )
     .then( id => {
         localStorage.setItem('twitterApp-user', id);
-        this.firebaseService.userLogin = id;
       }
     );
     this.router.navigate(['/home']);
